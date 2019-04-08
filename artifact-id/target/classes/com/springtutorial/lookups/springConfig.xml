@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+               
+     <bean id="c" class="com.springtutorial.lookups.Car">
+     	<lookup-method name="getCarEngine" bean="engine"/>
+     </bean>
+     
+     <bean id="engine" class="com.springtutorial.lookups.Engine">
+    	<property name="name" value="Honda Engine"></property>
+    	<property name="year" value="2015"></property>
+    </bean>
+     
+ </beans>

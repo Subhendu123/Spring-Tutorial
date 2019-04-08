@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">  
+  
+<bean id="school" class="check_group_id.autowire.School" autowire="byName">  
+</bean>  
+<bean id="student" class="check_group_id.autowire.Student"> <!-- autowire-candidate="false" -->
+<property name="name" value="Subhendu"></property>
+</bean>
+
+<bean id="student1" class="check_group_id.autowire.Student">
+<property name="name" value="Subhendu"></property>
+</bean>
+<!-- Exception in thread "main" org.springframework.beans.factory.UnsatisfiedDependencyException:
+ Error creating bean with name 'school' defined in class path resource [check_group_id/autowire/context.xml]:
+ Unsatisfied dependency expressed through bean property 'student': :
+  No unique bean of type [check_group_id.autowire.Student] is defined: expected single matching bean but found 2: [student, student1]; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No unique bean of type 
+[check_group_id.autowire.Student] is defined: expected single matching bean but found 2: [student, student1] -->
+  
+</beans>  
